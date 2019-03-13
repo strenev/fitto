@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Choose an activity
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-segment [(ngModel)]="activityFilter">
+          <ion-segment-button checked="true" value="{{ActivityFilter.Sports}}"
+            (ionSelect)="selectActivityByType(ActivityFilter.Sports)">
+            <ion-label>Sports</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="{{ActivityFilter.Wellness}}"
+            (ionSelect)="selectActivityByType(ActivityFilter.Wellness)">
+            <ion-label>Wellness</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="{{ActivityFilter.Beauty}}"
+            (ionSelect)="selectActivityByType(ActivityFilter.Beauty)">
+            <ion-label>Beauty</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="showSpinner">
+      <ion-col>
+          <ion-spinner class="spinner"></ion-spinner>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="activities">
+      <ion-col>
+        <ion-card *ngFor="let activity of activities" class="welcome-card" (click)="onSelect(activity.id)">
+          <ion-img src="/assets/shapes.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{activity.name}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/activities"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card class="welcome-card" *ngFor="let trainer of trainers" (click)="onSelect(trainer.id)">
+                    <ion-img src="/assets/shapes.svg"></ion-img>
+                    <ion-card-header>
+                        <ion-card-title>{{trainer.name}}</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
