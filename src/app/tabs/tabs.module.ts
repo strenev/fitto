@@ -12,7 +12,6 @@ import { ActivityDetailModule } from '../activity-detail/activity-detail.module'
 import { TrainerDetailModule } from '../trainer-detail/trainer-detail.module';
 import { HomeModule } from '../home/home.module';
 import { ProfileModule } from '../profile/profile.module';
-import { FavouritesModule } from '../favourites/favourites.module';
 
 @NgModule({
   imports: [
@@ -24,8 +23,7 @@ import { FavouritesModule } from '../favourites/favourites.module';
     ActivityDetailModule,
     TrainerDetailModule,
     HomeModule,
-    ProfileModule,
-    FavouritesModule
+    ProfileModule
   ],
   declarations: [TabsPage]
 })

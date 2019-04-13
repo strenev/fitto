@@ -30,9 +30,9 @@
       <ion-col>
         <ion-card *ngFor="let activity of activities" class="welcome-card" (click)="onSelect(activity.id)">
           <ion-img src="{{activity.photoUrl}}"></ion-img>
-          <!-- <ion-card-header>
+          <ion-card-header>
             <ion-card-title>{{activity.name}}</ion-card-title>
-          </ion-card-header> -->
+          </ion-card-header>
         </ion-card>
       </ion-col>
     </ion-row>

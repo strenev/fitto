@@ -8,11 +8,22 @@
   margin: auto;
 }
 
-ion-title{
-  font-size: 22px;
-  font-weight: 700;
-}
-
 ion-segment-button > ion-label {
   font-size: 12px;
+}
+
+ion-card {
+  height: 20vh;
+}
+
+.welcome-card ion-img {
+  max-height: 20vh;
+}
+
+ion-card-header {
+  margin-top: -8vh;
+}
+
+ion-card-title{
+  color: #ffffff;
 }
