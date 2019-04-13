@@ -1,30 +1,26 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header mode="md">
+  <ion-toolbar color="main">
+  </ion-toolbar>
+  <ion-toolbar color="main">
     <ion-title>
-      Choose an activity
+      Избери категория
     </ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="md" color="main">
+    <ion-segment mode="md" [(ngModel)]="activityFilter">
+      <ion-segment-button mode="md" checked="true" value="{{ActivityFilter.Sports}}"
+        (ionSelect)="selectActivityByType(ActivityFilter.Sports)">
+        <ion-label>СПОРТ</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" value="{{ActivityFilter.Wellness}}"
+        (ionSelect)="selectActivityByType(ActivityFilter.Wellness)">
+        <ion-label>УЕЛНЕС</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-segment [(ngModel)]="activityFilter">
-          <ion-segment-button checked="true" value="{{ActivityFilter.Sports}}"
-            (ionSelect)="selectActivityByType(ActivityFilter.Sports)">
-            <ion-label>Sports</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="{{ActivityFilter.Wellness}}"
-            (ionSelect)="selectActivityByType(ActivityFilter.Wellness)">
-            <ion-label>Wellness</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="{{ActivityFilter.Beauty}}"
-            (ionSelect)="selectActivityByType(ActivityFilter.Beauty)">
-            <ion-label>Beauty</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-      </ion-col>
-    </ion-row>
     <ion-row *ngIf="showSpinner">
       <ion-col>
           <ion-spinner class="spinner"></ion-spinner>
@@ -33,10 +29,10 @@
     <ion-row *ngIf="activities">
       <ion-col>
         <ion-card *ngFor="let activity of activities" class="welcome-card" (click)="onSelect(activity.id)">
-          <ion-img src="/assets/shapes.svg"></ion-img>
-          <ion-card-header>
+          <ion-img src="{{activity.photoUrl}}"></ion-img>
+          <!-- <ion-card-header>
             <ion-card-title>{{activity.name}}</ion-card-title>
-          </ion-card-header>
+          </ion-card-header> -->
         </ion-card>
       </ion-col>
     </ion-row>

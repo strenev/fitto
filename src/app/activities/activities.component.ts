@@ -4,8 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export enum ActivityFilter {
   Sports = 0,
-  Wellness = 1,
-  Beauty = 2
+  Wellness = 1
 }
 
 @Component({
