@@ -6,7 +6,6 @@ import { ActivitiesComponent } from '../activities/activities.component';
 import { TrainerDetailComponent } from '../trainer-detail/trainer-detail.component';
 import { HomeComponent } from '../home/home.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { FavouritesComponent } from '../favourites/favourites.component';
 
 const routes: Routes = [
   {
@@ -56,16 +55,6 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../profile/profile.module#ProfileModule'
-          }
-        ]
-      },
-      {
-        path: 'favourites',
-        component: FavouritesComponent,
-        children: [
-          {
-            path: '',
-            loadChildren: '../favourites/favourites.module#FavouritesModule'
           }
         ]
       },
