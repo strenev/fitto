@@ -3,7 +3,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ActivityDetailComponent } from './activity-detail.component';
+import { ActivityDetailComponent, ActivityNamePipe } from './activity-detail.component';
+import { DisplayRatingComponent } from './display-rating-component/display-rating.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { ActivityDetailComponent } from './activity-detail.component';
     FormsModule,
     RouterModule.forChild([{ path: '', component: ActivityDetailComponent }])
   ],
-  declarations: [ActivityDetailComponent]
+  declarations: [ActivityDetailComponent, ActivityNamePipe, DisplayRatingComponent]
 })
 export class ActivityDetailModule {}

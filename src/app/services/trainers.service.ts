@@ -8,6 +8,10 @@ export interface Trainer {
     name: string;
     age: number;
     activity: number;
+    rating: number;
+    practiceLenght: number;
+    practicePrice: number;
+    imageUrl: string;
 }
 
 @Injectable({

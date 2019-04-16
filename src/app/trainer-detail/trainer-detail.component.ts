@@ -23,6 +23,7 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
     });
     this.trainersService.getTrainer(this.trainerId).subscribe(res => {
       this.trainer = res[0];
+      console.log(res);
     });
   }
 
