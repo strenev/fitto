@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Pipe, PipeTransform } from '@angular/core';
 import { Trainer, TrainersService } from '../services/trainers.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -23,7 +23,6 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
     });
     this.trainersService.getTrainer(this.trainerId).subscribe(res => {
       this.trainer = res[0];
-      console.log(res);
     });
   }
 

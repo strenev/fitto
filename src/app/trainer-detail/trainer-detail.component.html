@@ -1,25 +1,29 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="home"></ion-back-button>
+<ion-header no-border>
+    <ion-toolbar color="main">
+        <ion-buttons>
+            <ion-back-button text="" defaultHref="home"></ion-back-button>
         </ion-buttons>
-        <ion-title *ngIf="trainer">{{trainer.name}}</ion-title>
+        <ion-title *ngIf="trainer">{{trainer.activity | activityName}}</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>
-    <ion-grid>
+<ion-content *ngIf="trainer">
+    <div class="main"></div>
+    <ion-grid *ngIf="trainer">
         <ion-row>
             <ion-col>
-                <ion-card *ngIf="trainer">
-                    <ion-card-header>
-                      <ion-card-subtitle>{{trainer.age}} years old</ion-card-subtitle>
-                      <ion-card-title>{{trainer.name}}</ion-card-title>
-                    </ion-card-header>
-                  
-                    <ion-card-content>
-                    </ion-card-content>
-                  </ion-card>
+                <ion-thumbnail>
+                    <img src="{{trainer.imageUrl}}">
+                </ion-thumbnail>
             </ion-col>
+        </ion-row>
+        <br>
+        <br>
+        <br>
+            <ion-row>
+                <ion-col>
+                        <h3>{{trainer.name}}</h3>
+                        <p>{{trainer.activity | activityName}} Инструктор</p>
+                </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>
