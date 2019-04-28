@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TrainerDetailComponent} from './trainer-detail.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ActivityDetailModule } from '../activity-detail/activity-detail.module';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { PipesModule } from '../pipes/pipes.module';
     CommonModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: TrainerDetailComponent }]),
-    PipesModule
+    PipesModule,
+    ActivityDetailModule
   ],
   declarations: [TrainerDetailComponent]
 })

@@ -6,7 +6,7 @@
         <ion-title *ngIf="trainer">{{trainer.activity | activityName}}</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content *ngIf="trainer">
+<ion-content>
     <div class="main"></div>
     <ion-grid *ngIf="trainer">
         <ion-row>
@@ -19,11 +19,32 @@
         <br>
         <br>
         <br>
-            <ion-row>
-                <ion-col>
-                        <h3>{{trainer.name}}</h3>
-                        <p>{{trainer.activity | activityName}} Инструктор</p>
-                </ion-col>
+        <ion-row>
+            <ion-col>
+                <h3>{{trainer.name}}</h3>
+                <p>{{trainer.activity | activityName}} Инструктор</p>
+            </ion-col>
+        </ion-row>
+        <br>
+        <ion-row>
+            <ion-col class="trainer-description">
+                <span class="description-item">Опит: </span> <span class="description-value">{{trainer.experience}} години</span>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="trainer-description">
+                <span class="description-item">Рейтинг/Оценка: </span> <span class="display-rating"><display-rating [rating]="trainer.rating"></display-rating></span>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="trainer-description">
+                <span class="description-item">Адрес: </span> <span class="description-value">{{trainer.address}}</span>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="trainer-description">
+                <span class="description-item">Телефон: </span> <span class="description-value">{{trainer.phoneNumber}}</span>
+            </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>

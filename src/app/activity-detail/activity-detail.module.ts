@@ -15,6 +15,7 @@ import { PipesModule } from '../pipes/pipes.module';
     RouterModule.forChild([{ path: '', component: ActivityDetailComponent }]),
     PipesModule
   ],
-  declarations: [ActivityDetailComponent, DisplayRatingComponent]
+  declarations: [ActivityDetailComponent, DisplayRatingComponent],
+  exports: [DisplayRatingComponent]
 })
 export class ActivityDetailModule {}

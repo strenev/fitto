@@ -12,6 +12,9 @@ export interface Trainer {
     practiceLenght: number;
     practicePrice: number;
     imageUrl: string;
+    experience: number;
+    address: string;
+    phoneNumber: string;
 }
 
 @Injectable({
