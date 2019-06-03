@@ -28,12 +28,15 @@
         <br>
         <ion-row>
             <ion-col class="trainer-description">
-                <span class="description-item">Опит: </span> <span class="description-value">{{trainer.experience}} години</span>
+                <span class="description-item">Опит: </span> <span class="description-value">{{trainer.experience}}
+                    години</span>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col class="trainer-description">
-                <span class="description-item">Рейтинг/Оценка: </span> <span class="display-rating"><display-rating [rating]="trainer.rating"></display-rating></span>
+                <span class="description-item">Рейтинг/Оценка: </span> <span class="display-rating">
+                    <display-rating [rating]="trainer.rating"></display-rating>
+                </span>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -43,7 +46,14 @@
         </ion-row>
         <ion-row>
             <ion-col class="trainer-description">
-                <span class="description-item">Телефон: </span> <span class="description-value">{{trainer.phoneNumber}}</span>
+                <span class="description-item">Телефон: </span> <span
+                    class="description-value">{{trainer.phoneNumber}}</span>
+            </ion-col>
+        </ion-row>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button color="main" expand="block">Запази час за тренировка</ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>

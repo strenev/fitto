@@ -1,6 +1,8 @@
 {
-  "name": "mybody",
-  "integrations": {},
+  "name": "fitto",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "4ff568f7"
 }

@@ -1,20 +1,8 @@
 <ion-header mode="md" no-border>
   <ion-toolbar color="main">
     <ion-title>
-      Избери категория
+      Избери спорт
     </ion-title>
-  </ion-toolbar>
-  <ion-toolbar mode="md" color="main">
-    <ion-segment mode="md" [(ngModel)]="activityFilter">
-      <ion-segment-button mode="md" checked="true" value="{{ActivityFilter.Sports}}"
-        (ionSelect)="selectActivityByType(ActivityFilter.Sports)">
-        <ion-label>СПОРТ</ion-label>
-      </ion-segment-button>
-      <ion-segment-button mode="md" value="{{ActivityFilter.Wellness}}"
-        (ionSelect)="selectActivityByType(ActivityFilter.Wellness)">
-        <ion-label>УЕЛНЕС</ion-label>
-      </ion-segment-button>
-    </ion-segment>
   </ion-toolbar>
 </ion-header>
 <ion-content>
