@@ -1,5 +1,5 @@
-<ion-header no-border>
-    <ion-toolbar color="main">
+<ion-header>
+    <ion-toolbar>
         <ion-buttons slot="start">
             <ion-back-button text="" defaultHref="tabs/activities"></ion-back-button>
         </ion-buttons>
@@ -10,17 +10,18 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <ion-item lines="none" *ngFor="let trainer of trainers" (click)="onSelect(trainer.id)">
-                    <ion-thumbnail slot="start">
-                      <img src="{{trainer.imageUrl}}">
-                    </ion-thumbnail>
-                    <ion-label color="main">
+                <ion-item *ngFor="let trainer of trainers" (click)="onSelect(trainer.id)">
+                    <ion-avatar slot="start">
+                        <img src="{{trainer.imageUrl}}">
+                    </ion-avatar>
+                    <ion-label>
                         <h3>{{trainer.name}}</h3>
                         <p>{{trainer.practicePrice}} лв / {{trainer.practiceLength}} мин</p>
+                        <p>{{trainer.address}}</p>
                         <display-rating [rating]="trainer.rating"></display-rating>
-                        <br>
                     </ion-label>
-                  </ion-item>
+                    <ion-icon name="arrow-forward" color="primary"></ion-icon>
+                </ion-item>
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -12,6 +12,7 @@ import { DisplayRatingComponent } from './display-rating.component';
     FormsModule,
     RouterModule.forChild([{ path: '', component: DisplayRatingComponent }])
   ],
-  declarations: [DisplayRatingComponent]
+  declarations: [DisplayRatingComponent],
+  exports: [DisplayRatingComponent]
 })
 export class DisplayRatingModule {}

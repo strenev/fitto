@@ -2,6 +2,9 @@ import { Component, OnInit, OnDestroy, Input, Pipe, PipeTransform } from '@angul
 import { Trainer, TrainersService } from '../services/trainers.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { PopoverController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { BookTrainerComponent} from './book-trainer.component'
 
 @Component({
   selector: 'app-trainer-detail',
@@ -14,7 +17,10 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
   sub: any;
   trainer: Trainer;
 
-  constructor(private route: ActivatedRoute, private trainersService: TrainersService) {
+  constructor(
+    private route: ActivatedRoute, 
+    private trainersService: TrainersService,
+    public modalController: ModalController) {
   }
 
   ngOnInit() {
@@ -24,6 +30,14 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
     this.trainersService.getTrainer(this.trainerId).subscribe(res => {
       this.trainer = res[0];
     });
+  }
+
+  async bookTrainer() {
+    const modal = await this.modalController.create({
+      component: BookTrainerComponent,
+      componentProps: {trainer: this.trainer}
+    });
+    return await modal.present();
   }
 
   ngOnDestroy() {

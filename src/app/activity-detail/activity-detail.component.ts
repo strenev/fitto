@@ -14,17 +14,17 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
   sub: any;
   trainers: Trainer[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private trainersService: TrainersService){
+  constructor(private route: ActivatedRoute, private router: Router, private trainersService: TrainersService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.activityId = +params['activityId']; 
-   });
+      this.activityId = +params['activityId'];
+    });
 
-   this.trainersService.getTrainersByActivity(this.activityId).subscribe(res => {
-    this.trainers = res;
-  });
+    this.trainersService.getTrainersByActivity(this.activityId).subscribe(res => {
+      this.trainers = res;
+    });
 
   }
 
@@ -32,7 +32,7 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl(this.router.url + '/' + trainerId);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
 
   }
 

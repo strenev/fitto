@@ -12,16 +12,16 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-        children: [
-          {
-            path: '',
-            loadChildren: '../home/home.module#HomeModule'
-          }
-        ]
-      },
+      // {
+      //   path: 'home',
+      //   component: HomeComponent,
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: '../home/home.module#HomeModule'
+      //     }
+      //   ]
+      // },
       {
         path: 'activities',
         component: ActivitiesComponent,
