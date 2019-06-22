@@ -12,6 +12,7 @@ import { ActivityDetailModule } from '../activity-detail/activity-detail.module'
 import { TrainerDetailModule } from '../trainer-detail/trainer-detail.module';
 import { HomeModule } from '../home/home.module';
 import { ProfileModule } from '../profile/profile.module';
+import { BookingsModule } from '../bookings/bookings.module';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ProfileModule } from '../profile/profile.module';
     ActivityDetailModule,
     TrainerDetailModule,
     HomeModule,
-    ProfileModule
+    ProfileModule,
+    BookingsModule
   ],
   declarations: [TabsPage]
 })

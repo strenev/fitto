@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Trainer } from './trainers.service';
 
 export interface Booking {
   id?: string;
-  trainerId: string;
   bookingInfo: string;
   bookingDate: Date;
   bookingTime: Date;
+  trainerName: string;
+  trainerImage: string;
+  activity: number;
 }
  
 @Injectable({

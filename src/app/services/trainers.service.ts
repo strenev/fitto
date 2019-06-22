@@ -15,6 +15,8 @@ export interface Trainer {
     experience: number;
     address: string;
     phoneNumber: string;
+    info: string;
+    instagram: string;
 }
 
 @Injectable({

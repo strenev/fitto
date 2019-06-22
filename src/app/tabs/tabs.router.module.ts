@@ -6,6 +6,7 @@ import { ActivitiesComponent } from '../activities/activities.component';
 import { TrainerDetailComponent } from '../trainer-detail/trainer-detail.component';
 import { HomeComponent } from '../home/home.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { BookingsComponent } from '../bookings/bookings.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,16 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../profile/profile.module#ProfileModule'
+          }
+        ]
+      },
+      {
+        path: 'bookings',
+        component: BookingsComponent,
+        children: [
+          {
+            path: '',
+            loadChildren: '../bookings/bookings.module#BookingsModule'
           }
         ]
       },

@@ -1,0 +1,29 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <!-- <ion-title>Bookings</ion-title> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-row>
+        <ion-col>
+            <h1>Bookings</h1>
+        </ion-col>
+    </ion-row>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item *ngFor="let booking of bookings">
+                    <ion-avatar slot="start">
+                        <img src="{{booking.trainerImage}}">
+                    </ion-avatar>
+                    <ion-label>
+                        <h3>{{booking.trainerName}}</h3>
+                        <p>{{booking.activity | activityName}}</p>
+                        <p>{{booking.bookingDate | date}} - {{booking.bookingTime| date:'shortTime'}}</p>
+                    </ion-label>
+                    <ion-icon name="arrow-forward" color="primary"></ion-icon>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

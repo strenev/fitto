@@ -1,7 +1,6 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>
-      Избери спорт
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +8,12 @@
   <ion-grid>
     <ion-row *ngIf="showSpinner">
       <ion-col>
-          <ion-spinner class="spinner"></ion-spinner>
+        <ion-spinner class="spinner"></ion-spinner>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <h1>Sports</h1>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="activities">
@@ -17,6 +21,7 @@
         <ion-card *ngFor="let activity of activities" class="welcome-card" (click)="onSelect(activity.id)">
           <ion-img src="{{activity.photoUrl}}"></ion-img>
           <ion-card-header>
+            <ion-card-subtitle>100+ profiles</ion-card-subtitle>
             <ion-card-title>{{activity.name}}</ion-card-title>
           </ion-card-header>
         </ion-card>
