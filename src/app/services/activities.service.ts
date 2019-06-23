@@ -7,7 +7,7 @@ export interface Activity {
   id?: string;
   name: string;
 }
- 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +15,7 @@ export class ActivitiesService {
   private activitiesCollection: AngularFirestoreCollection<Activity>;
   private db: AngularFirestore;
   private activities: Observable<Activity[]>;
- 
+
   constructor(db: AngularFirestore) {
     this.activitiesCollection = db.collection<Activity>('activities');
     this.db = db;
@@ -31,7 +31,7 @@ export class ActivitiesService {
 
   }
 
-  getActivities(){
+  getActivities() {
     return this.activities;
   }
 

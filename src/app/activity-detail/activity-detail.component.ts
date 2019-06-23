@@ -14,7 +14,10 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
   sub: any;
   trainers: Trainer[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private trainersService: TrainersService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private trainersService: TrainersService) {
   }
 
   ngOnInit() {

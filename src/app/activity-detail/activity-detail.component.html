@@ -3,16 +3,15 @@
         <ion-buttons slot="start">
             <ion-back-button text="Sports" defaultHref="tabs/activities"></ion-back-button>
         </ion-buttons>
-        <!-- <ion-title>{{activityId | activityName}}</ion-title> -->
     </ion-toolbar>
 </ion-header>
 <ion-content>
     <ion-grid>
-    <ion-row>
+        <ion-row>
             <ion-col>
                 <h1>{{activityId | activityName}}</h1>
             </ion-col>
-          </ion-row>
+        </ion-row>
         <ion-row>
             <ion-col>
                 <ion-item *ngFor="let trainer of trainers" (click)="onSelect(trainer.id)">

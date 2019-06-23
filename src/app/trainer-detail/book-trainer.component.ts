@@ -17,13 +17,13 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
     public bookingTime: Date;
     public bookingInfo: string;
 
-    constructor(private modalController: ModalController, 
-                private bookingsService: BookingsService,
-                private toastController: ToastController) {
+    constructor(
+        private modalController: ModalController,
+        private bookingsService: BookingsService,
+        private toastController: ToastController) {
     }
 
     ngOnInit() {
-        console.log(this.trainer)
     }
 
     public dismissModal() {
@@ -32,12 +32,12 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
 
     async presentToast() {
         const toast = await this.toastController.create({
-          message: 'Запазихте успешно тренировка.',
-          duration: 2000,
-          color: "primary"
+            message: 'Booking successful',
+            duration: 2000,
+            color: "primary"
         });
         toast.present();
-      }
+    }
 
     public confirmBooking() {
         const booking: Booking = {

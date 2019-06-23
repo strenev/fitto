@@ -13,7 +13,7 @@ export interface Booking {
   trainerImage: string;
   activity: number;
 }
- 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +21,7 @@ export class BookingsService {
   private bookingsCollection: AngularFirestoreCollection<Booking>;
   private db: AngularFirestore;
   private bookings: Observable<Booking[]>;
- 
+
   constructor(db: AngularFirestore) {
     this.bookingsCollection = db.collection<Booking>('bookings');
     this.db = db;
@@ -37,7 +37,7 @@ export class BookingsService {
 
   }
 
-  getBookings(){
+  getBookings() {
     return this.bookings;
   }
 

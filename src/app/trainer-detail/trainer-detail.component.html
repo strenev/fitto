@@ -27,23 +27,19 @@
     <ion-grid *ngIf="trainer">
         <ion-row>
             <ion-col>
-                <h1>
-                    About
-                </h1>
+                <h1>About</h1>
                 <ion-text>
-                    <p>
-                        {{trainer.info}}
-                    </p>
+                    <p>{{trainer.info}}</p>
                 </ion-text>
                 <ion-list>
-                        <ion-item>
-                            <ion-icon slot="start" name="information-circle"></ion-icon>
-                            <ion-label>{{trainer.age}} years old</ion-label>
-                        </ion-item>
-                        <ion-item>
-                            <ion-icon slot="start" name="fitness"></ion-icon>
-                            <ion-label>{{trainer.experience}} years experience</ion-label>
-                        </ion-item>
+                    <ion-item>
+                        <ion-icon slot="start" name="information-circle"></ion-icon>
+                        <ion-label>{{trainer.age}} years old</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon slot="start" name="fitness"></ion-icon>
+                        <ion-label>{{trainer.experience}} years experience</ion-label>
+                    </ion-item>
                     <ion-item>
                         <ion-icon slot="start" name="pin"></ion-icon>
                         <ion-label>{{trainer.address}}</ion-label>

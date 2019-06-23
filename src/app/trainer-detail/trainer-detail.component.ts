@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopoverController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
-import { BookTrainerComponent} from './book-trainer.component'
+import { BookTrainerComponent } from './book-trainer.component'
 
 @Component({
   selector: 'app-trainer-detail',
@@ -18,7 +18,7 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
   trainer: Trainer;
 
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private trainersService: TrainersService,
     public modalController: ModalController) {
   }
@@ -35,7 +35,7 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
   async bookTrainer() {
     const modal = await this.modalController.create({
       component: BookTrainerComponent,
-      componentProps: {trainer: this.trainer}
+      componentProps: { trainer: this.trainer }
     });
     return await modal.present();
   }

@@ -1,17 +1,6 @@
-
-.spinner {
-  display: block;
-  margin: auto;
-}
-
 ion-card {
   height: 20vh;
-  border-radius: 20px;
-}
-
-.welcome-card ion-img {
-  max-height: 20vh;
-  overflow: hidden;
+  border-radius: 15px;
 }
 
 ion-card-header {
@@ -20,6 +9,16 @@ ion-card-header {
 
 ion-card-title, ion-card-subtitle{
   color: #ffffff;
+}
+
+.welcome-card ion-img {
+  max-height: 20vh;
+  overflow: hidden;
+}
+
+.spinner {
+  display: block;
+  margin: auto;
 }
 
 h1 {
