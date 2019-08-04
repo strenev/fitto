@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, Pipe, PipeTransform } from '@angular/core';
 import { Trainer, TrainersService } from '../services/trainers.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-activity-detail',
@@ -12,7 +12,7 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
 
   activityId: number;
   sub: any;
-  trainers: Trainer[];
+  trainers: Observable<Trainer[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,13 +21,12 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    
     this.sub = this.route.params.subscribe(params => {
       this.activityId = +params['activityId'];
     });
 
-    this.trainersService.getTrainersByActivity(this.activityId).subscribe(res => {
-      this.trainers = res;
-    });
+    this.trainers =this.trainersService.getTrainersByActivity(this.activityId);
 
   }
 

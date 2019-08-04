@@ -3,3 +3,9 @@ h1 {
   font-weight: 700;
   font-size: 32px;
 }
+
+ion-button {
+  --border-radius: 20px;
+  width: 80%;
+  margin: 0 auto;
+}

@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Trainer } from './trainers.service';
+import { AuthenticationService } from './authentication.service';
 
 export interface Booking {
   id?: string;
@@ -12,6 +13,8 @@ export interface Booking {
   trainerName: string;
   trainerImage: string;
   activity: number;
+  bookedBy: string;
+  location: string;
 }
 
 @Injectable({
@@ -43,6 +46,10 @@ export class BookingsService {
 
   getBookingByTrainerId(trainerId) {
     return this.bookingsCollection.doc<Booking>(trainerId).valueChanges();
+  }
+
+  getBookingsByUser(uid) {
+    return this.db.collection<Booking>('bookings', ref => ref.where('bookedBy', '==', uid)).valueChanges();
   }
 
   updateBooking(booking: Booking, id: string) {

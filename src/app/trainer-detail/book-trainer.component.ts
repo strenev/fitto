@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ModalController, ToastController } from '@ionic/angular';
 import { BookingsService, Booking } from '../services/bookings.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
     selector: 'book-trainer',
@@ -17,13 +18,18 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
     public bookingTime: Date;
     public bookingInfo: string;
 
+    public userDetails: any;
+
     constructor(
         private modalController: ModalController,
         private bookingsService: BookingsService,
-        private toastController: ToastController) {
+        private toastController: ToastController,
+        private authService: AuthenticationService) {
     }
 
     ngOnInit() {
+        this.userDetails = this.authService.userDetails();
+        console.log(this.userDetails);
     }
 
     public dismissModal() {
@@ -46,7 +52,9 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
             bookingInfo: this.bookingInfo,
             trainerName: this.trainer.name,
             trainerImage: this.trainer.imageUrl,
-            activity: this.trainer.activity
+            activity: this.trainer.activity,
+            bookedBy: this.userDetails.uid,
+            location: this.trainer.address
         }
 
         this.bookingsService.addBooking(booking).then(() => {

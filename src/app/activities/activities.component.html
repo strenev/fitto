@@ -1,18 +1,17 @@
+<ion-header no-border>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <ion-grid>
-    <ion-row *ngIf="showSpinner">
-      <ion-col>
-        <ion-spinner class="spinner"></ion-spinner>
-      </ion-col>
-    </ion-row>
     <ion-row>
       <ion-col>
         <h1>Sports</h1>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="activities">
+    <ion-row>
       <ion-col>
-        <ion-card *ngFor="let activity of activities" class="welcome-card" (click)="onSelect(activity.id)">
+        <ion-card *ngFor="let activity of activities | async" class="welcome-card" (click)="onSelect(activity.id)">
           <ion-img src="{{activity.photoUrl}}"></ion-img>
           <ion-card-header>
             <ion-card-subtitle>100+ profiles</ion-card-subtitle>

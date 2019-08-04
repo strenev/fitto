@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity, ActivitiesService } from '../services/activities.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { AuthenticationService } from '../services/authentication.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tab-activities',
@@ -10,19 +13,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class ActivitiesComponent implements OnInit {
 
-  activities: Activity[];
-  filteredActivities: Activity[];
-  showSpinner: boolean = true;
+  activities: Observable<Activity[]>;
 
-  constructor(private activitiesService: ActivitiesService,
-    private router: Router) {
+  constructor(
+    private activitiesService: ActivitiesService,
+    private router: Router,
+    private navCtrl: NavController,
+    private authService: AuthenticationService) {
   }
 
   ngOnInit() {
-    this.activitiesService.getActivities().subscribe(res => {
-      this.activities = res;
-      this.showSpinner = false;
-    });
+    this.activities = this.activitiesService.getActivities();
   }
 
   onSelect(activityId: any): void {
