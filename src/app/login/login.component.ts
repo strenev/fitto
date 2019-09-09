@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
   async loginUser(value){
     this.authService.loginUser(value)
     .then(res => {
-      console.log(res);
       this.errorMessage = "";
       this.navCtrl.navigateForward('/tabs/activities');
     }, err => {

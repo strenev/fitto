@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Trainer } from './trainers.service';
 import { AuthenticationService } from './authentication.service';
+import * as firebase from 'firebase/app';
 
 export interface Booking {
   id?: string;
@@ -24,6 +25,7 @@ export class BookingsService {
   private bookingsCollection: AngularFirestoreCollection<Booking>;
   private db: AngularFirestore;
   private bookings: Observable<Booking[]>;
+  private user: any;
 
   constructor(db: AngularFirestore) {
     this.bookingsCollection = db.collection<Booking>('bookings');
@@ -37,7 +39,6 @@ export class BookingsService {
         });
       })
     );
-
   }
 
   getBookings() {

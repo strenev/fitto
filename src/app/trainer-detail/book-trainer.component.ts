@@ -29,7 +29,6 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.userDetails = this.authService.userDetails();
-        console.log(this.userDetails);
     }
 
     public dismissModal() {
@@ -49,7 +48,7 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
         const booking: Booking = {
             bookingTime: this.bookingTime,
             bookingDate: this.bookingDate,
-            bookingInfo: this.bookingInfo,
+            bookingInfo: this.bookingInfo || "",
             trainerName: this.trainer.name,
             trainerImage: this.trainer.imageUrl,
             activity: this.trainer.activity,

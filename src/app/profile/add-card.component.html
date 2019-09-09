@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="primary">
+            <ion-button (click)="dismissModal()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Add payment method</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label position="fixed">Name</ion-label>
+            <ion-input placeholder="Required" [(ngModel)]="holderName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Number</ion-label>
+            <ion-input placeholder="Required" [(ngModel)]="cardNumber"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Expires</ion-label>
+            <ion-input placeholder="MM / YYYY" [(ngModel)]="expirationDate"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">CVV</ion-label>
+            <ion-input placeholder="Security Code" [(ngModel)]="cvv"></ion-input>
+        </ion-item>
+    </ion-list>
+    <br>
+    <ion-button expand="block" (click)="confirmPayment()">Confirm</ion-button>
+</ion-content>

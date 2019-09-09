@@ -5,26 +5,26 @@
                 <ion-icon name="close"></ion-icon>
             </ion-button>
         </ion-buttons>
-        <ion-title>Запази час</ion-title>
+        <ion-title>Book training</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content>
     <ion-list>
         <ion-item>
-            <ion-label>Дата</ion-label>
-            <ion-datetime display-format="DDD, MMM D, YYYY" day-short-names="Пон,Вто,Сря,Чет,Пет,Съб,Нед"
-                month-short-names="Януари,Февруари,Март,Април,Май,Юни,Юли,Август,Септември,Октомври,Ноември,Декември"
-                min="2019-06-15" max="2019-12-31" placeholder="Въведи дата" [(ngModel)]="bookingDate"></ion-datetime>
+            <ion-label>Date</ion-label>
+            <ion-datetime display-format="DDD, MMM D, YYYY" day-short-names="Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+                month-short-names="January,February,March,April,May,June,July,August,September,October,November,December"
+                min="2019-06-15" max="2019-12-31" placeholder="Date" [(ngModel)]="bookingDate"></ion-datetime>
         </ion-item>
         <ion-item>
-            <ion-label>Час</ion-label>
-            <ion-datetime display-format="h:mm A" minuteValues="0,15,30,45" placeholder="Въведи час"
+            <ion-label>Time</ion-label>
+            <ion-datetime display-format="h:mm A" minuteValues="0,15,30,45" placeholder="Time"
                 [(ngModel)]="bookingTime"></ion-datetime>
         </ion-item>
         <ion-item>
-            <ion-textarea placeholder="Забележки" [(ngModel)]="bookingInfo"></ion-textarea>
+            <ion-textarea placeholder="Notes" [(ngModel)]="bookingInfo"></ion-textarea>
         </ion-item>
     </ion-list>
     <br>
-    <ion-button expand="block" (click)="confirmBooking()">Потвърди</ion-button>
+    <ion-button expand="block" (click)="confirmBooking()">Confirm</ion-button>
 </ion-content>

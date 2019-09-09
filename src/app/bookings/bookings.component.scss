@@ -8,3 +8,10 @@ ion-avatar {
   width: 10vh;
   height: 10vh;
 }
+
+.spin{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

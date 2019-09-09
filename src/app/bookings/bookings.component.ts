@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Booking, BookingsService } from '../services/bookings.service';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../services/authentication.service';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-bookings',
@@ -13,11 +14,15 @@ export class BookingsComponent implements OnInit {
   public bookings: Observable<Booking[]>;
 
   constructor(
-    private bookingsService: BookingsService,
-    private authService: AuthenticationService) { }
+    private bookingsService: BookingsService) {
+  }
 
   ngOnInit() {
-    this.bookings = this.bookingsService.getBookings();
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.bookings = this.bookingsService.getBookingsByUser(user.uid);
+      }
+    });
   }
 
 }
