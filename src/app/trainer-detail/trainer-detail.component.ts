@@ -1,10 +1,8 @@
-import { Component, OnInit, OnDestroy, Input, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Trainer, TrainersService } from '../services/trainers.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { PopoverController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
-import { BookTrainerComponent } from './book-trainer.component'
+import { BookTrainerComponent } from './book-trainer.component';
 
 @Component({
   selector: 'app-trainer-detail',

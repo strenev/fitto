@@ -37,8 +37,8 @@ export class ProfileComponent implements OnInit {
       .then(res => { })
       .catch(error => { })
       .finally(() => {
-        this.navCtrl.navigateRoot('/login')
-      })
+        this.navCtrl.navigateRoot('/login');
+      });
   }
 
   async addCard() {

@@ -13,8 +13,8 @@ export class AuthenticationService {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
         .then(
           res => resolve(res),
-          err => reject(err))
-    })
+          err => reject(err));
+    });
   }
 
   loginUser(value) {
@@ -22,8 +22,8 @@ export class AuthenticationService {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
         .then(
           res => resolve(res),
-          err => reject(err))
-    })
+          err => reject(err));
+    });
   }
 
   logoutUser() {
@@ -36,7 +36,7 @@ export class AuthenticationService {
             reject();
           });
       }
-    })
+    });
   }
 
   userDetails() {

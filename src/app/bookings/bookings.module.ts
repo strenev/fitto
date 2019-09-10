@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BookingsComponent } from './bookings.component';
-import { BookingDetailComponent} from './booking-detail.component'
+import { BookingDetailComponent} from './booking-detail.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { ActivityDetailModule } from '../activity-detail/activity-detail.module';
 

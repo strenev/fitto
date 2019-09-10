@@ -2,11 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Trainer } from './trainers.service';
-import { AuthenticationService } from './authentication.service';
-import * as firebase from 'firebase/app';
 
-export interface Card{
+export interface Card {
   id?: string;
   holderName: string;
   cardNumber: string;

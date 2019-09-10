@@ -11,8 +11,19 @@ import { AuthenticationService } from '../services/authentication.service';
 export class LoginComponent implements OnInit {
 
   validations_form: FormGroup;
-  errorMessage: string = '';
-  loading: boolean = false;
+  errorMessage: string;
+  loading: boolean;
+
+  validation_messages = {
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Please enter a valid email.' }
+    ],
+    'password': [
+      { type: 'required', message: 'Password is required.' },
+      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+    ]
+  };
 
   constructor(
 
@@ -36,30 +47,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
-  validation_messages = {
-    'email': [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Please enter a valid email.' }
-    ],
-    'password': [
-      { type: 'required', message: 'Password is required.' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
-    ]
-  };
-
-
   async loginUser(value) {
     this.loading = true;
     this.authService.loginUser(value)
       .then(res => {
-        this.errorMessage = "";
+        this.errorMessage = '';
         this.loading = false;
         this.navCtrl.navigateForward('/tabs/activities');
       }, err => {
         this.errorMessage = err.message;
         this.loading = false;
-      })
+      });
   }
 
   goToRegisterPage() {

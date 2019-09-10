@@ -12,9 +12,9 @@ export class RegisterComponent implements OnInit {
 
 
   validations_form: FormGroup;
-  errorMessage: string = '';
-  successMessage: string = '';
-  loading: boolean = false;
+  errorMessage: string;
+  successMessage: string;
+  loading: boolean;
 
   validation_messages = {
     'email': [
@@ -49,25 +49,25 @@ export class RegisterComponent implements OnInit {
   tryRegister(value) {
     this.loading = true;
     this.authService.registerUser(value)
-      .then(res => {
-        this.errorMessage = "";
-        this.successMessage = "Your account has been created.";
+      .then(result => {
+        this.errorMessage = '';
+        this.successMessage = 'Your account has been created.';
 
         this.authService.loginUser(value)
           .then(res => {
-            this.errorMessage = "";
+            this.errorMessage = '';
             this.loading = false;
             this.navCtrl.navigateForward('/tabs/activities');
           }, err => {
             this.errorMessage = err.message;
             this.loading = false;
-          })
+          });
 
       }, err => {
         this.errorMessage = err.message;
-        this.successMessage = "";
+        this.successMessage = '';
         this.loading = false;
-      })
+      });
   }
 
   goLoginPage() {

@@ -28,18 +28,18 @@ export class BookingDetailComponent implements OnInit, OnDestroy {
         const toast = await this.toastController.create({
             message: 'Booking canceled',
             duration: 2000,
-            color: "primary"
+            color: 'primary'
         });
         toast.present();
     }
 
     public cancelBooking(booking: Booking) {
-        let updatedBooking = booking;
+        const updatedBooking = booking;
         updatedBooking.status = false;
         this.bookingsService.updateBooking(updatedBooking, booking.id).then(() => {
             this.modalController.dismiss();
             this.presentToast();
-        })
+        });
     }
 
     ngOnDestroy() { }

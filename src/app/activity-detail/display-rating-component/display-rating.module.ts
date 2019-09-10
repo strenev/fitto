@@ -15,4 +15,4 @@ import { DisplayRatingComponent } from './display-rating.component';
   declarations: [DisplayRatingComponent],
   exports: [DisplayRatingComponent]
 })
-export class DisplayRatingModule {}
+export class DisplayRatingModule { }

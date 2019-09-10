@@ -34,7 +34,7 @@ export class AddCardComponent implements OnInit, OnDestroy {
         const toast = await this.toastController.create({
             message: 'Adding card successful',
             duration: 2000,
-            color: "primary"
+            color: 'primary'
         });
         toast.present();
     }
@@ -46,12 +46,12 @@ export class AddCardComponent implements OnInit, OnDestroy {
             expirationDate: this.expirationDate,
             cvv: this.cvv,
             uid: this.user.uid
-        }
+        };
 
         this.cardsService.addCard(card).then(() => {
             this.modalController.dismiss();
             this.presentToast();
-        })
+        });
 
     }
 

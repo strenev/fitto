@@ -39,7 +39,7 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
         const toast = await this.toastController.create({
             message: 'Booking successful',
             duration: 2000,
-            color: "primary"
+            color: 'primary'
         });
         toast.present();
     }
@@ -48,19 +48,19 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
         const booking: Booking = {
             bookingTime: this.bookingTime,
             bookingDate: this.bookingDate,
-            bookingInfo: this.bookingInfo || "",
+            bookingInfo: this.bookingInfo || '',
             trainerName: this.trainer.name,
             trainerImage: this.trainer.imageUrl,
             activity: this.trainer.activity,
             bookedBy: this.userDetails.uid,
             location: this.trainer.address,
             status: true
-        }
+        };
 
         this.bookingsService.addBooking(booking).then(() => {
             this.modalController.dismiss();
             this.presentToast();
-        })
+        });
 
     }
 
