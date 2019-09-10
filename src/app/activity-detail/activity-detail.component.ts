@@ -21,12 +21,12 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    
+
     this.sub = this.route.params.subscribe(params => {
       this.activityId = +params['activityId'];
     });
 
-    this.trainers =this.trainersService.getTrainersByActivity(this.activityId);
+    this.trainers = this.trainersService.getTrainersByActivity(this.activityId);
 
   }
 
@@ -34,8 +34,6 @@ export class ActivityDetailComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl(this.router.url + '/' + trainerId);
   }
 
-  ngOnDestroy() {
-
-  }
+  ngOnDestroy() { }
 
 }

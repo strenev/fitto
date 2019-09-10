@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BookingsComponent } from './bookings.component';
+import { BookingDetailComponent} from './booking-detail.component'
 import { PipesModule } from '../pipes/pipes.module';
+import { ActivityDetailModule } from '../activity-detail/activity-detail.module';
 
 @NgModule({
   imports: [
@@ -12,8 +14,10 @@ import { PipesModule } from '../pipes/pipes.module';
     CommonModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: BookingsComponent }]),
-    PipesModule
+    PipesModule,
+    ActivityDetailModule
   ],
-  declarations: [BookingsComponent]
+  declarations: [BookingsComponent, BookingDetailComponent],
+  entryComponents: [BookingDetailComponent]
 })
 export class BookingsModule {}

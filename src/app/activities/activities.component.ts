@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity, ActivitiesService } from '../services/activities.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
-import { AuthenticationService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,9 +15,7 @@ export class ActivitiesComponent implements OnInit {
 
   constructor(
     private activitiesService: ActivitiesService,
-    private router: Router,
-    private navCtrl: NavController,
-    private authService: AuthenticationService) {
+    private router: Router) {
   }
 
   ngOnInit() {

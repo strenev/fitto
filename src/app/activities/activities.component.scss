@@ -16,9 +16,11 @@ ion-card-title, ion-card-subtitle{
   overflow: hidden;
 }
 
-.spinner {
-  display: block;
-  margin: auto;
+.spin{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1 {

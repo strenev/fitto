@@ -16,6 +16,7 @@ export interface Booking {
   activity: number;
   bookedBy: string;
   location: string;
+  status: boolean;
 }
 
 @Injectable({
@@ -50,7 +51,15 @@ export class BookingsService {
   }
 
   getBookingsByUser(uid) {
-    return this.db.collection<Booking>('bookings', ref => ref.where('bookedBy', '==', uid)).valueChanges();
+    return this.db.collection<Booking>('bookings', ref => ref.where('bookedBy', '==', uid)).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
   }
 
   updateBooking(booking: Booking, id: string) {

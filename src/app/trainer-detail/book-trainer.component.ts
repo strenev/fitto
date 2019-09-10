@@ -53,7 +53,8 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
             trainerImage: this.trainer.imageUrl,
             activity: this.trainer.activity,
             bookedBy: this.userDetails.uid,
-            location: this.trainer.address
+            location: this.trainer.address,
+            status: true
         }
 
         this.bookingsService.addBooking(booking).then(() => {

@@ -27,4 +27,5 @@ import { BookingsModule } from '../bookings/bookings.module';
   ],
   declarations: [TabsPage]
 })
-export class TabsPageModule {}
+
+export class TabsPageModule { }

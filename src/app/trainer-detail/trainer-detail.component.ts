@@ -40,8 +40,6 @@ export class TrainerDetailComponent implements OnInit, OnDestroy {
     return await modal.present();
   }
 
-  ngOnDestroy() {
-
-  }
+  ngOnDestroy() { }
 
 }

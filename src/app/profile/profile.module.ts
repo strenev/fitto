@@ -16,4 +16,5 @@ import { AddCardComponent } from './add-card.component';
   declarations: [ProfileComponent, AddCardComponent],
   entryComponents: [AddCardComponent]
 })
-export class ProfileModule {}
+
+export class ProfileModule { }

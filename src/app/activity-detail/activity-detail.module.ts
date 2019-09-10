@@ -18,4 +18,5 @@ import { DisplayRatingModule } from './display-rating-component/display-rating.m
   ],
   declarations: [ActivityDetailComponent]
 })
-export class ActivityDetailModule {}
+
+export class ActivityDetailModule { }

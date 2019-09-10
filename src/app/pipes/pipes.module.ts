@@ -13,4 +13,5 @@ import { ActivityNamePipe } from './activity-name.pipe';
   declarations: [ActivityNamePipe],
   exports: [ActivityNamePipe]
 })
-export class PipesModule {}
+
+export class PipesModule { }

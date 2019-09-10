@@ -1,0 +1,68 @@
+<ion-header no-border>
+    <ion-toolbar color="light">
+        <ion-buttons slot="primary">
+            <ion-button (click)="dismissModal()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <section class="heading" *ngIf="booking">
+        <ion-row>
+            <ion-col size="5">
+                <ion-avatar>
+                    <img src="{{booking.trainerImage}}">
+                </ion-avatar>
+            </ion-col>
+            <ion-col size="7" align-self-end>
+                <ion-label>
+                    <h2>{{booking.trainerName}}</h2>
+                    <p>{{booking.activity | activityName}} Instructor</p>
+                    <br>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <br>
+    </section>
+    <ion-grid *ngIf="booking">
+        <br>
+        <ion-row>
+            <ion-col>
+                <h1>When</h1>
+                <ion-list>
+                    <ion-item>
+                        <ion-icon slot="end" name="calendar"></ion-icon>
+                        <ion-label>{{booking.bookingDate | date:'longDate'}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon slot="end" name="time"></ion-icon>
+                        <ion-label>{{booking.bookingTime | date:'shortTime'}}, {{booking.bookingTime | date:'EEEE'}}</ion-label>
+                    </ion-item>
+                </ion-list>
+                <br>
+                <h1>Where</h1>
+                <ion-list>
+                    <ion-item>
+                        <ion-icon slot="end" name="pin"></ion-icon>
+                        <ion-label>{{booking.activity | activityName}} at {{booking.location}}</ion-label>
+                    </ion-item>
+                    <ion-item *ngIf="booking.status">
+                        <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+                        <ion-label>Active booking</ion-label>
+                    </ion-item>
+                    <ion-item *ngIf="!booking.status">
+                        <ion-icon slot="end" name="close-circle-outline"></ion-icon>
+                        <ion-label>Canceled booking</ion-label>
+                    </ion-item>
+                </ion-list>
+                <br>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="booking.status">
+            <ion-col>
+                <ion-button expand="block" (click)="cancelBooking(booking)">Cancel booking</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

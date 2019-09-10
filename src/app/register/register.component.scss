@@ -16,3 +16,10 @@ ion-label, p, .error-message {
     margin-top: 12vh;
     margin-bottom: 2vh;
 }
+
+.spin{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

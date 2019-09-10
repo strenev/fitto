@@ -24,4 +24,5 @@ const routes: Routes = [
   ],
   declarations: [RegisterComponent]
 })
-export class RegisterModule {}
+
+export class RegisterModule { }

@@ -27,7 +27,6 @@ export class ProfileComponent implements OnInit {
         this.user = user;
         this.cardsService.getCardByUser(this.user.uid).subscribe(res => {
           this.existingCard = res[0];
-          console.log(res[0]);
         });
       }
     });

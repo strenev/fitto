@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   validations_form: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
+  loading: boolean = false;
 
   validation_messages = {
     'email': [
@@ -46,6 +47,7 @@ export class RegisterComponent implements OnInit {
   }
 
   tryRegister(value) {
+    this.loading = true;
     this.authService.registerUser(value)
       .then(res => {
         this.errorMessage = "";
@@ -54,14 +56,17 @@ export class RegisterComponent implements OnInit {
         this.authService.loginUser(value)
           .then(res => {
             this.errorMessage = "";
+            this.loading = false;
             this.navCtrl.navigateForward('/tabs/activities');
           }, err => {
             this.errorMessage = err.message;
+            this.loading = false;
           })
 
       }, err => {
         this.errorMessage = err.message;
         this.successMessage = "";
+        this.loading = false;
       })
   }
 

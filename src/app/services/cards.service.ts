@@ -38,7 +38,7 @@ export class CardsService {
     );
   }
 
-  getBookings() {
+  getCards() {
     return this.cards;
   }
 

@@ -1,0 +1,40 @@
+ion-text p {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+ion-avatar {
+    width: 10vh;
+    height: 10vh;
+    margin-left: 16px;
+}
+
+ion-col ion-button {
+    --border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+h1 {
+    margin: 0 0 0 16px;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.heading {
+    background-color: #f4f5f8;
+    width: 100%;
+}
+
+ion-icon[name="checkmark-circle-outline"] {
+    color: #10dc60;
+}
+
+ion-icon[name="close-circle-outline"] {
+    color: #f04041;
+}

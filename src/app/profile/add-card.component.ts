@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
-import { CardsService, Card} from '../services/cards.service';
+import { CardsService, Card } from '../services/cards.service';
 
 @Component({
     selector: 'add-card',
@@ -55,6 +55,6 @@ export class AddCardComponent implements OnInit, OnDestroy {
 
     }
 
-    ngOnDestroy() {}
+    ngOnDestroy() { }
 
 }
