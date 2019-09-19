@@ -51,7 +51,7 @@ export class BookingsService {
   }
 
   getBookingsByUser(uid) {
-    return this.db.collection<Booking>('bookings', ref => ref.where('bookedBy', '==', uid)).snapshotChanges().pipe(
+    return this.db.collection<Booking>('bookings', ref => ref.where('bookedBy', '==', uid).orderBy("bookingDate")).snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();

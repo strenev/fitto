@@ -14,11 +14,11 @@
             <ion-label>Date</ion-label>
             <ion-datetime display-format="DDD, MMM D, YYYY" day-short-names="Mon,Tue,Wed,Thu,Fri,Sat,Sun"
                 month-short-names="January,February,March,April,May,June,July,August,September,October,November,December"
-                min="2019-06-15" max="2019-12-31" placeholder="Date" [(ngModel)]="bookingDate"></ion-datetime>
+                min="{{minDate}}" max="{{maxDate}}" placeholder="Date" [(ngModel)]="bookingDate"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-label>Time</ion-label>
-            <ion-datetime display-format="h:mm A" minuteValues="0,15,30,45" placeholder="Time"
+            <ion-datetime display-format="HH:mm" minuteValues="0,15,30,45" placeholder="Time"
                 [(ngModel)]="bookingTime"></ion-datetime>
         </ion-item>
         <ion-item>

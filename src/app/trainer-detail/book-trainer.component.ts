@@ -19,6 +19,9 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
     public bookingInfo: string;
 
     public userDetails: any;
+    public currentDate: Date;
+    public minDate: string;
+    public maxDate: string;
 
     constructor(
         private modalController: ModalController,
@@ -29,6 +32,9 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.userDetails = this.authService.userDetails();
+        this.currentDate = new Date();
+        this.minDate = this.generateMinDate(this.currentDate);
+        this.maxDate = this.generateMaxDate(this.currentDate);
     }
 
     public dismissModal() {
@@ -61,7 +67,22 @@ export class BookTrainerComponent implements OnInit, OnDestroy {
             this.modalController.dismiss();
             this.presentToast();
         });
+    }
 
+    public generateMinDate(currentDate: Date): string {
+        if (currentDate.getMonth() < 10) {
+            return `${currentDate.getFullYear()}-0${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+        } else {
+            return `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+        }
+    }
+
+    public generateMaxDate(currentDate: Date): string {
+        if ((currentDate.getMonth() + 1) < 9) {
+            return `${currentDate.getFullYear()}-0${currentDate.getMonth() + 2}-${currentDate.getDate()}`;
+        } else {
+            return `${currentDate.getFullYear()}-${currentDate.getMonth() + 2}-${currentDate.getDate()}`;
+        }
     }
 
     ngOnDestroy() {

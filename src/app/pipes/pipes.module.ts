@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivityNamePipe } from './activity-name.pipe';
+import { ReversePipe } from './reverse.pipe';
 
 @NgModule({
   imports: [
@@ -10,8 +11,8 @@ import { ActivityNamePipe } from './activity-name.pipe';
     CommonModule,
     FormsModule
   ],
-  declarations: [ActivityNamePipe],
-  exports: [ActivityNamePipe]
+  declarations: [ActivityNamePipe, ReversePipe],
+  exports: [ActivityNamePipe, ReversePipe]
 })
 
 export class PipesModule { }

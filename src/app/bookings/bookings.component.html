@@ -11,7 +11,7 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <ion-item *ngFor="let booking of bookings | async" (click)="openBooking(booking)">
+                <ion-item *ngFor="let booking of bookings | async | reverse" (click)="openBooking(booking)">
                     <ion-avatar slot="start">
                         <img src="{{booking.trainerImage}}">
                     </ion-avatar>

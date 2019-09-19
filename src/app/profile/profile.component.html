@@ -14,10 +14,10 @@
             <ion-col>
                 <ion-list *ngIf="user">
                     <ion-item>
-                        <ion-avatar slot="start">
+                        <ion-avatar slot="end">
                             <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
                         </ion-avatar>
-                        <ion-label>{{user.email }}</ion-label>
+                        <ion-label>{{user.email}}</ion-label>
                     </ion-item>
                     <ion-item *ngIf="!existingCard" (click)="addCard()" detail>
                         <ion-label>
@@ -25,8 +25,23 @@
                         </ion-label>
                     </ion-item>
                     <ion-item *ngIf="existingCard">
-                        <ion-icon slot="start" name="card"></ion-icon>
+                        <ion-icon slot="end" name="card"></ion-icon>
                         <ion-label>{{maskCard(existingCard?.cardNumber)}}</ion-label>
+                    </ion-item>
+                    <ion-item detail>
+                        <ion-label>
+                            Terms and Conditions
+                        </ion-label>
+                    </ion-item>
+                    <ion-item detail>
+                        <ion-label>
+                            Privacy policy
+                        </ion-label>
+                    </ion-item>
+                    <ion-item detail>
+                        <ion-label>
+                            Help and Support
+                        </ion-label>
                     </ion-item>
                 </ion-list>
             </ion-col>
