@@ -8,7 +8,7 @@ import { TabsPage } from './tabs.page';
 import { ActivitiesModule } from '../activities/activities.module';
 import { ActivityDetailModule } from '../activity-detail/activity-detail.module';
 import { TrainerDetailModule } from '../trainer-detail/trainer-detail.module';
-import { HomeModule } from '../home/home.module';
+import { OffersModule } from '../offers/offers.module';
 import { ProfileModule } from '../profile/profile.module';
 import { BookingsModule } from '../bookings/bookings.module';
 
@@ -21,7 +21,7 @@ import { BookingsModule } from '../bookings/bookings.module';
     ActivitiesModule,
     ActivityDetailModule,
     TrainerDetailModule,
-    HomeModule,
+    OffersModule,
     ProfileModule,
     BookingsModule
   ],

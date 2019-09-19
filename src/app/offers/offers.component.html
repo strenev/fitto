@@ -1,0 +1,27 @@
+<ion-header no-border>
+    <ion-toolbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <h1>Offers</h1>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-card *ngFor="let offer of offers | async" class="offer-card">
+                    <ion-img src="{{offer.photoUrl}}"></ion-img>
+                    <ion-card-header>
+                        <ion-card-subtitle>PROMO: {{offer.promoCode}}</ion-card-subtitle>
+                        <ion-card-title>{{offer.brand}}</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<div class="spin" *ngIf="!offers">
+  <ion-spinner></ion-spinner>
+</div>

@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 import { ActivityDetailComponent } from '../activity-detail/activity-detail.component';
 import { ActivitiesComponent } from '../activities/activities.component';
 import { TrainerDetailComponent } from '../trainer-detail/trainer-detail.component';
-import { HomeComponent } from '../home/home.component';
+import { OffersComponent } from '../offers/offers.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { BookingsComponent } from '../bookings/bookings.component';
 
@@ -13,16 +13,6 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-        children: [
-          {
-            path: '',
-            loadChildren: '../home/home.module#HomeModule'
-          }
-        ]
-      },
       {
         path: 'activities',
         component: ActivitiesComponent,
@@ -48,6 +38,16 @@ const routes: Routes = [
           path: '',
           loadChildren: '../trainer-detail/trainer-detail.module#TrainerDetailModule'
         }]
+      },
+      {
+        path: 'offers',
+        component: OffersComponent,
+        children: [
+          {
+            path: '',
+            loadChildren: '../offers/offers.module#OffersModule'
+          }
+        ]
       },
       {
         path: 'profile',
